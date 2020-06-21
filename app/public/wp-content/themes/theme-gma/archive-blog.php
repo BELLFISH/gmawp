@@ -27,7 +27,7 @@
       }
       $content = get_the_content();
       if(!empty($content)){
-        $content = mb_substr($content,0,46) . '...';
+        $content = mb_substr($content,0,36) . '...';
       }
 ?>
 

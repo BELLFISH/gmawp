@@ -4,7 +4,6 @@
   align-items: center;
   @extend %ff-roboto;
   @include font(23 / 2,23 / 2,100);
-  color: $color_black;
   @include mq(LG_only) {
     @include font(14,14,100);
   }
@@ -24,6 +23,7 @@
     margin-right: 5px;
     margin-left: 5px;
     text-decoration: none;
+    color: $color_black;
     &:hover,&:active,&:visited {
       color: $color_black;
     }

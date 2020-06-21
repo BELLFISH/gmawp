@@ -3,6 +3,12 @@
   @extend %container-border;
   @extend %wrapper_X_L;
   text-align: left;
+  a {
+    color: $color_black;
+    &:hover,&:active,&:visited {
+      color: $color_black;
+    }
+  }
   &_section {
     &:not(:nth-child(-n+2)) {
       margin-top: $gap_MN_L;

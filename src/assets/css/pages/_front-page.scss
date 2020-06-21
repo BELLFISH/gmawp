@@ -155,7 +155,15 @@
               margin-bottom: .4em;
             }
           }
-          input,textarea {
+          input,input[type="submit"],textarea {
+            // reset
+            appearance: none;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            font: inherit;
+            outline: none;
+
             width: 100%;
             max-width: 100%;
             border: 1px solid #CCC;

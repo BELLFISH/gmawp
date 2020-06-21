@@ -13,15 +13,12 @@
 <?php
     while(have_posts()):
       the_post();
-        $thumbnail = get_the_post_thumbnail($post->ID,'full');
-        if(empty($thumbnail)){
-          $thumbnail = '<div class="c-thumbnailDummy"></div>';
-        }
 ?>
       <article class="archiveWorks_item js-animation-slideUp">
         <a href="<?php the_permalink(); ?>" class="c-singleLink">
           <div class="c-singleLink_hoverEffect">
             <?php
+              $thumbnail = '<div class="c-thumbnailDummy"></div>';
               $image = SCF::get('image');
               if($image) {
                 echo wp_get_attachment_image($image[0],'large');

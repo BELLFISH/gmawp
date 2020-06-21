@@ -92,30 +92,6 @@ header {
       }
     }
   }
-  &.is-close {
-    .nav-menu {
-      transform: translateY(-100%);
-      transition: $transition_high;
-      &_list {
-        opacity: 0;
-        transform: translateY(10px);
-        transition: all 0;
-      }
-    }
-    .nav-btn {
-      #navBtnDefault path {
-        animation-name: navBtnIn;
-        animation-duration: .6s;
-        animation-fill-mode: both;
-        transition-delay: 1.4s;
-      }
-      #navBtnCross path {
-        animation-name: navBtnOut;
-        animation-duration: .6s;
-        animation-fill-mode: both;
-      }
-    }
-  }
   &.is-open {
     .nav-menu {
       transform: translateY(0);
@@ -129,15 +105,38 @@ header {
     }
     .nav-btn {
       #navBtnDefault path {
-        animation-name: navBtnOut;
+        animation-name: navBtnDefaultOut;
         animation-duration: .6s;
         animation-fill-mode: both;
       }
       #navBtnCross path {
-        animation-name: navBtnIn;
+        animation-name: navBtnCrossIn;
         animation-duration: .6s;
         animation-fill-mode: both;
-        transition-delay: 1.4s;
+      }
+    }
+  }
+  &.is-close {
+    .nav-menu {
+      transform: translateY(-100%);
+      transition: $transition_high;
+      &_list {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0;
+      }
+    }
+    .nav-btn {
+      #navBtnDefault path {
+        animation-name: navBtnDefaultIn;
+        animation-duration: .6s;
+        animation-fill-mode: both;
+        // transition-delay: 1.4s;
+      }
+      #navBtnCross path {
+        animation-name: navBtnCrossOut;
+        animation-duration: .6s;
+        animation-fill-mode: both;
       }
     }
   }

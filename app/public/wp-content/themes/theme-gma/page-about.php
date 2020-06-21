@@ -16,7 +16,9 @@
 
       <section class="p-about_section js-animation-slideUp">
         <h2 class="p-about_title">設計について</h2>
-        <p class="p-about_text">私たちは設計するにあたり、あらかじめ「こうしたい」という絶対的な物差しを持ち込みません。<br>人や場所など要件が変わればその都度あるべき姿は変わるはずです。<br>プロジェクトごとの状況から「」の中を発見していきたいと考えています。<br>そこで大切になることが対話することだと考えています。<br>プロジェクトのことは勿論ですが、日々の生活や他愛のない内容についてでもお話しをしながら、「」の発見を共に探すことが設計行為と考えています。</p>
+        <p class="p-about_text">建築、空間を共につくるという価値を大事にしています。高度に産業化された世界だからこそ「つくる」過程から共有すること自体をプロジェクトと捉えています。</p>
+        <p>あらかじめに「こうしたい」という形やプランはありません。むしろプロジェクトの全方位的な状況を読み込み「」の中身を発見していく行為を設計と考えています。</p>
+        <p>当然と思える物事の結びつき方や関係性から問い直していきます。そこにある微かな、また思いがけない発見を設計の足がかりとしていきます。</p>
       </section>
 
       <section class="p-about_section js-animation-slideUp">
@@ -45,8 +47,12 @@
           <dd>法政大学大学院工学研究科建設工学専攻建築学領域修士課程修了</dd>
           <dt>2009-14</dt>
           <dd>株式会社千葉学建築計画事務所</dd>
-          <dt>2015-</dt>
+          <dt>2016-</dt>
           <dd>森元気建築設計事務所主宰</dd>
+          <dt>2019-</dt>
+          <dd>ICSカレッジカレッジオブアーツ非常勤講師</dd>
+          <dt>2020-</dt>
+          <dd>京都芸術大学非常勤講師</dd>
         </dl>
       </section>
 
@@ -94,55 +100,44 @@
           <li class="flow_item">
             <h3 class="flow_heading"><span><span>お問い合わせ</span></span><span class="en">Contact</span></h3>
             <div class="flow_textArea">
-              <p class="flow_text">まずはホームページの<a href="/#contact">contact</a>にお気軽にご連絡下さい。<br>敷地や規模、ご予算などわかる事が御座いましたら、簡単にでも構いませんので、お教えください。<br>折り返しご連絡いたします。敷地を探すことのお手伝いからも行なっております。</p>
+              <p class="flow_text">まずはホームページの<a href="<?php echo home_url('').'/#contact'; ?>">contact</a>にお気軽にご連絡下さい。<br>敷地などのわかる資料が御座いましたら、簡単にでも構いませんので、お教えください。折り返しご連絡致します。</p>
             </div>
           </li>
           <li class="flow_item">
             <h3 class="flow_heading"><span><span>初回打合わせ</span></span><span class="en">Meeting</span></h3>
             <div class="flow_textArea">
-              <p class="flow_text">建築、空間についてメージを共有することを主としています。<br>普段のお仕事や、趣味、好きな食べ物など様々なトピックについてお話をしましょう。<br>住宅などの場合、どのように住まわれているかを把握するために可能な限り、現在住まわれているお宅に伺わせて頂いております。<br>具体的な敷地、建物の図面などが御座いましたらお持ちください。</p>
+              <p class="flow_text">依頼の内容や日常など様々な事を話しながら、共につくっていく下地の共有をしていくことが主になります。</p>
             </div>
           </li>
           <li class="flow_item">
-            <h3 class="flow_heading"><span><span>調査/プレゼンテーション</span></span><span class="en">Survey/Presentation</span></h3>
+            <h3 class="flow_heading"><span><span>調査/プレゼン/契約</span></span><span class="en">Survey/Presentation/Contract</span></h3>
             <div class="flow_textArea">
-              <p class="flow_text">設計するに当たり、敷地の条件、法的な確認を行い、初回打ち合わせでのお話を参考にしながら、ご提案資料を作成いたします。<br>設計契約前に依頼をご検討頂くために図面や模型が必要な場合には、プレゼンテーション製作費15万円を申し受けます。その後、契約となった場合には必要ありません。</p>
-            </div>
-          </li>
-          <li class="flow_item">
-            <h3 class="flow_heading"><span><span>設計契約</span></span><span class="en">Contract</span></h3>
-            <div class="flow_textArea">
-              <p class="flow_text">プレゼンテーションでのご提案にもとづいて契約します。ここから具体的に設計が始まります。</p>
+              <p class="flow_text">設計に当たり、敷地の条件、法的な確認を行い、初回打ち合わせでのお話を参考にしながら、提案資料を作成致します。この段階で設計契約を締結し、本格的に設計が始まります。</p>
             </div>
           </li>
           <li class="flow_item">
             <h3 class="flow_heading"><span><span>基本設計/実施設計</span></span><span class="en">Design</span></h3>
             <div class="flow_textArea">
-              <p class="flow_text">建物の骨格や間取り、大まかな仕様を決定していくことが基本設計です。複数回のお打ち合わせをしながら検討を進めていきます。<br>その後工事見積もり、確認申請などに必要となる詳細な検討、確認となる実施設計を行ないます。</p>
+              <p class="flow_text">複数回の打ち合わせを行いながら、コンセプト、建物の骨格や間取り、大まかな仕様を決定していきます(基本設計)。その後工事見積もり、確認申請などに必要となる詳細な確認、検討していきます(実施設計)。</p>
             </div>
           </li>
           <li class="flow_item">
-            <h3 class="flow_heading"><span><span>工事見積もり/見積もり調整</span></span><span class="en">Estimate</span></h3>
+            <h3 class="flow_heading"><span><span>工事見積もり/見積もり調整/確認申請</span></span><span class="en">Estimate</span></h3>
             <div class="flow_textArea">
-              <p class="flow_text">作成した図面をもとに工事金額の見積依頼を行います。工事金額の妥当性を査定を行ったり、予算を超える金額の際は設計案が損なわないような調整を行います。</p>
+              <p class="flow_text">作成した図面をもとに工事金額の見積依頼を行います。工事金額の妥当性の査定をし、予算を超える金額の際は設計案が損なわないような調整します。また建築確認申請書類を作成し、提出します。</p>
             </div>
           </li>
           <li class="flow_item">
-            <h3 class="flow_heading"><span><span>工事監理</span></span><span class="en">Construction</span></h3>
+            <h3 class="flow_heading"><span><span>工事監理/竣工/検査</span></span><span class="en">Construction/Completion</span></h3>
             <div class="flow_textArea">
-              <p class="flow_text">設計の通り工事が進んでいるか、施工者と密にコミュニケーションを図りながら監理を行ないます。<br>工事の進捗により回数は異なりますが、新築の場合およそ週一回程度は現場に足を運びます。</p>
-            </div>
-          </li>
-          <li class="flow_item">
-            <h3 class="flow_heading"><span><span>竣工</span></span><span class="en">Completion</span></h3>
-            <div class="flow_textArea">
-              <p class="flow_text">ついに完成です。行政の検査、設計者による最終検査の後に、お施主様による最終検査を行います。<br>塗装の汚れなどをチェックし手直しを行い、お引渡しとなります。またお引渡しから一年程度経ちましたら、一年点検を行ないます。<br>その後も何かございましたら、お気軽にご連絡ください。</p>
+              <p class="flow_text">施工者とコミュニケーションを図りながら、設計通りの工事が進んでいるかを確認します。竣工間際に行政検査、設計者検査を経て、お施主様による最終検査による是正箇所の手直しを行い、お引渡しとなります。</p>
             </div>
           </li>
         </ol>
         <ul class="flow_noteList">
-          <li>設計料の目安として新築の住宅の場合、工事金額の12%～18%となります。用途や規模などによってこの限りでなありませんので、御見積もりいたします。</li>
+          <li>設計料の目安として新築の住宅の場合、工事金額の12%～16%となります。用途や規模などによってこの限りではありませんので、別途御見積もり致します。</li>
           <li>設計料には申請機関に支払う確認申請手数料などは含んでおりません。</li>
+          <li>③の段階で設計契約に至らない場合はプレゼンテーション製作費の目安として15万円を申し受けます。</li>
         </ul>
       </section>
 

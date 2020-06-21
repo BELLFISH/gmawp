@@ -38,21 +38,43 @@ button,input,select,textarea{font:inherit}
 @media screen and (min-width:961px){
 .p-about,.p-archive-blog,.p-archive-works,.p-single-blog{padding-bottom:90px}
 }
-@-webkit-keyframes navBtnOut{
+@-webkit-keyframes navBtnDefaultOut{
 from{transform:translate3d(0,0,0)}
 to{transform:translate3d(-100%,0,0);visibility:visible}
 }
-@keyframes navBtnOut{
+@keyframes navBtnDefaultOut{
 from{transform:translate3d(0,0,0)}
 to{transform:translate3d(-100%,0,0);visibility:visible}
 }
-@-webkit-keyframes navBtnIn{
+@-webkit-keyframes navBtnDefaultIn{
 from{transform:translate3d(100%,0,0)}
 to{transform:translate3d(0,0,0);visibility:visible}
 }
-@keyframes navBtnIn{
+@keyframes navBtnDefaultIn{
 from{transform:translate3d(100%,0,0)}
 to{transform:translate3d(0,0,0);visibility:visible}
+}
+@-webkit-keyframes navBtnCrossIn{
+0%{opacity:0;transform:translate3d(100%,0,0) scale(0) rotate(0)}
+20%{opacity:0}
+80%{opacity:1}
+100%{opacity:1;transform:translate3d(0,0,0) scale(1) rotate(360deg);visibility:visible}
+}
+@keyframes navBtnCrossIn{
+0%{opacity:0;transform:translate3d(100%,0,0) scale(0) rotate(0)}
+20%{opacity:0}
+80%{opacity:1}
+100%{opacity:1;transform:translate3d(0,0,0) scale(1) rotate(360deg);visibility:visible}
+}
+@-webkit-keyframes navBtnCrossOut{
+0%{opacity:1;transform:translate3d(0,0,0) scale(1)}
+10%{opacity:0}
+100%{opacity:0;transform:translate3d(-100%,0,0) scale(0);visibility:visible}
+}
+@keyframes navBtnCrossOut{
+0%{opacity:1;transform:translate3d(0,0,0) scale(1)}
+10%{opacity:0}
+100%{opacity:0;transform:translate3d(-100%,0,0) scale(0);visibility:visible}
 }
 @-webkit-keyframes slideUp{
 70%{opacity:1}
@@ -219,14 +241,14 @@ header .nav-btn #navBtnCross{width:15.78px;height:15.78px}
 .js-header-sp.is-set .nav-menu{transform:translateY(-100%)}
 .js-header-sp.is-set .nav-menu_list{opacity:0;transform:translateY(10px)}
 .js-header-sp.is-set .nav-btn #navBtnCross path{transform:translate3d(-100%,0,0)}
-.js-header-sp.is-close .nav-menu{transform:translateY(-100%);transition:ease-out .2s}
-.js-header-sp.is-close .nav-menu_list{opacity:0;transform:translateY(10px);transition:all 0}
-.js-header-sp.is-close .nav-btn #navBtnDefault path{-webkit-animation-name:navBtnIn;animation-name:navBtnIn;-webkit-animation-duration:.6s;animation-duration:.6s;-webkit-animation-fill-mode:both;animation-fill-mode:both;transition-delay:1.4s}
-.js-header-sp.is-close .nav-btn #navBtnCross path{-webkit-animation-name:navBtnOut;animation-name:navBtnOut;-webkit-animation-duration:.6s;animation-duration:.6s;-webkit-animation-fill-mode:both;animation-fill-mode:both}
 .js-header-sp.is-open .nav-menu{transform:translateY(0);transition:ease-out .2s}
 .js-header-sp.is-open .nav-menu_list{opacity:1;transform:translateY(0);transition:ease-out .4s;transition-delay:.3s}
-.js-header-sp.is-open .nav-btn #navBtnDefault path{-webkit-animation-name:navBtnOut;animation-name:navBtnOut;-webkit-animation-duration:.6s;animation-duration:.6s;-webkit-animation-fill-mode:both;animation-fill-mode:both}
-.js-header-sp.is-open .nav-btn #navBtnCross path{-webkit-animation-name:navBtnIn;animation-name:navBtnIn;-webkit-animation-duration:.6s;animation-duration:.6s;-webkit-animation-fill-mode:both;animation-fill-mode:both;transition-delay:1.4s}
+.js-header-sp.is-open .nav-btn #navBtnDefault path{-webkit-animation-name:navBtnDefaultOut;animation-name:navBtnDefaultOut;-webkit-animation-duration:.6s;animation-duration:.6s;-webkit-animation-fill-mode:both;animation-fill-mode:both}
+.js-header-sp.is-open .nav-btn #navBtnCross path{-webkit-animation-name:navBtnCrossIn;animation-name:navBtnCrossIn;-webkit-animation-duration:.6s;animation-duration:.6s;-webkit-animation-fill-mode:both;animation-fill-mode:both}
+.js-header-sp.is-close .nav-menu{transform:translateY(-100%);transition:ease-out .2s}
+.js-header-sp.is-close .nav-menu_list{opacity:0;transform:translateY(10px);transition:all 0}
+.js-header-sp.is-close .nav-btn #navBtnDefault path{-webkit-animation-name:navBtnDefaultIn;animation-name:navBtnDefaultIn;-webkit-animation-duration:.6s;animation-duration:.6s;-webkit-animation-fill-mode:both;animation-fill-mode:both}
+.js-header-sp.is-close .nav-btn #navBtnCross path{-webkit-animation-name:navBtnCrossOut;animation-name:navBtnCrossOut;-webkit-animation-duration:.6s;animation-duration:.6s;-webkit-animation-fill-mode:both;animation-fill-mode:both}
 .nav-block{position:relative}
 @media screen and (min-width:961px){
 .nav-block{max-width:1100px;height:140px;margin-right:auto;margin-left:auto}
@@ -292,7 +314,7 @@ header .nav-btn #navBtnCross{width:15.78px;height:15.78px}
 @media screen and (min-width:961px){
 .nav-menu_copy{display:block;width:100%;padding-right:.6em;text-align:right;font-size:11px;font-size:1.1rem;line-height:1.81818;letter-spacing:.03em;font-weight:300}
 }
-.pagenation{display:flex;justify-content:center;align-items:center;font-size:11.5px;font-size:1.15rem;line-height:1;letter-spacing:.1em;font-weight:300;color:#000}
+.pagenation{display:flex;justify-content:center;align-items:center;font-size:11.5px;font-size:1.15rem;line-height:1;letter-spacing:.1em;font-weight:300}
 @media screen and (min-width:961px){
 .pagenation{font-size:14px;font-size:1.4rem;line-height:1;letter-spacing:.1em;font-weight:300}
 }
@@ -300,7 +322,7 @@ header .nav-btn #navBtnCross{width:15.78px;height:15.78px}
 @media screen and (min-width:961px){
 .pagenation:not(:first-child){margin-top:60px}
 }
-.pagenation .page-numbers{position:relative;display:flex;justify-content:center;align-items:center;width:20px;height:20px;margin-right:5px;margin-left:5px;text-decoration:none}
+.pagenation .page-numbers{position:relative;display:flex;justify-content:center;align-items:center;width:20px;height:20px;margin-right:5px;margin-left:5px;text-decoration:none;color:#000}
 .pagenation .page-numbers:active,.pagenation .page-numbers:hover,.pagenation .page-numbers:visited{color:#000}
 .pagenation .page-numbers.next,.pagenation .page-numbers.prev{font-size:0}
 .pagenation .page-numbers.next::before,.pagenation .page-numbers.prev::before{content:"";position:absolute;top:54%;left:50%;transform:translate(-50%,-50%);display:block;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2256.802%22%20height%3D%2266.312%22%20viewBox%3D%220%200%2056.802%2066.312%22%3E%3Cg%20transform%3D%22translate%28-2192.599%20-299.844%29%22%3E%3Cg%3E%3Cg%3E%3Cpath%20d%3D%22M2192.6%2C362.305%2C2237.577%2C333%2C2192.6%2C303.695l5.915-3.851L2249.4%2C333l-50.887%2C33.156Z%22%20fill%3D%22%23000%22%2F%3E%3C%2Fg%3E%3Cg%3E%3Cpath%20d%3D%22M2192.6%2C362.305%2C2237.577%2C333%2C2192.6%2C303.695l5.915-3.851L2249.4%2C333l-50.887%2C33.156Z%22%20fill%3D%22%23000%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E");background-repeat:no-repeat;background-size:100% auto;background-position:center;width:7.3px;height:8.645px}
@@ -374,6 +396,8 @@ header .nav-btn #navBtnCross{width:15.78px;height:15.78px}
 .singleWorks_list>dd p{font-size:15px;font-size:1.5rem;line-height:1.66667;letter-spacing:.08em;font-weight:300}
 }
 .p-about{position:relative;text-align:left}
+.p-about a{color:#000}
+.p-about a:active,.p-about a:hover,.p-about a:visited{color:#000}
 .p-about_section:not(:nth-child(-n+2)){margin-top:45px}
 @media screen and (min-width:961px){
 .p-about_section:not(:nth-child(-n+2)){margin-top:90px;padding-right:360px}
@@ -550,7 +574,7 @@ header .nav-btn #navBtnCross{width:15.78px;height:15.78px}
 }
 .p-front-page .contact .mw_wp_form form .form_inner.error-message .error{font-size:inherit;color:#ff3000}
 .p-front-page .contact .mw_wp_form form .form_inner>p:first-child{margin-bottom:.4em}
-.p-front-page .contact .mw_wp_form form .form_inner input,.p-front-page .contact .mw_wp_form form .form_inner textarea{width:100%;max-width:100%;border:1px solid #ccc;background-color:#fff}
+.p-front-page .contact .mw_wp_form form .form_inner input,.p-front-page .contact .mw_wp_form form .form_inner input[type=submit],.p-front-page .contact .mw_wp_form form .form_inner textarea{-webkit-appearance:none;-moz-appearance:none;appearance:none;background:0 0;border:none;border-radius:0;font:inherit;outline:0;width:100%;max-width:100%;border:1px solid #ccc;background-color:#fff}
 .p-front-page .contact .mw_wp_form form .form_inner input[name=submit]{cursor:pointer;display:flex;align-items:center;justify-content:center;width:157.5px;height:40px;background-color:#000;border:none;font-size:12px;font-size:1.2rem;line-height:1;letter-spacing:.07em;font-weight:300;color:#fff}
 @media screen and (max-width:960px){
 .p-front-page .contact .mw_wp_form form .form_inner input[name=submit]{margin-right:auto;margin-left:auto}

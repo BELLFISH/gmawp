@@ -26,7 +26,7 @@
       </article>
       <?php } ?>
 
-      <div class="p-front-page_archiveLink"><a href="/works/"><span class="screen-reader-text">Works</span></a></div>
+      <div class="p-front-page_archiveLink"><a href="<?php echo home_url('works'); ?>"><span class="screen-reader-text">Works</span></a></div>
     </section>
 <?php
   wp_reset_postdata(); }
@@ -65,7 +65,7 @@
       <?php } ?>
 
       </div>
-      <div class="p-front-page_archiveLink"><a href="/blog/"><span class="screen-reader-text">Blog</span></a></div>
+      <div class="p-front-page_archiveLink"><a href="<?php echo home_url('blog'); ?>"><span class="screen-reader-text">Blog</span></a></div>
     </section>
 <?php
   wp_reset_postdata(); } ?>
