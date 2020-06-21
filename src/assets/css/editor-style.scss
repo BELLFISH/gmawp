@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+@import "foundation/_reset.scss";
+@import "foundation/settings/_font.scss";
+
+body#tinymce.mce-content-body {
+  padding: 30px!important;
+  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, Roboto, '游ゴシック体', YuGothic, 'Yu Gothic Medium', sans-serif;
+}

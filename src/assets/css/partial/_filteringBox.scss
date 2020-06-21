@@ -1,0 +1,46 @@
+.filteringBox {
+  text-align: left;
+  &:not(:first-child) {
+    @include mq(MN_only) {
+      margin-top: $gap_MN_M;
+    }
+  }
+  > * {
+    &:not(:first-child) {
+      margin-top: $gap_MN_M;
+    }
+    > p {
+      margin-bottom: .8em;
+      @include font(30 / 2,45 / 2,90);
+      @include mq(LG_only) {
+        @include font(15,36,90);
+      }
+    }
+    > ul {
+      li {
+        position: relative;
+        padding-left: 1em;
+        @include mq(LG_only) {
+          @include font(13,20,60);
+        }
+        &:not(:first-child) {
+          margin-top: .6em;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          display: block;
+          width: .6em;
+          height: 1px;
+          background-color: $color_black;
+        }
+        a {
+          text-decoration: none;
+          color: $color_black;
+        }
+      }
+    }
+  }
+}

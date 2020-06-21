@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+// --------------------------------------------------
+@import "foundation/_reset.scss";
+@import "foundation/settings/**";
+@import "foundation/functions/**";
+@import "foundation/quote/**";
+@import "foundation/_base.scss";
+
+@import "components/**";
+@import "partial/**";
+@import "pages/**";

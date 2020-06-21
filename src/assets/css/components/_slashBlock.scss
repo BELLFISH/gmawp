@@ -1,0 +1,28 @@
+.c-slashBlock {
+  span {
+    display: inline-block;
+    &:nth-child(1) {
+      position: relative;
+      margin-right: 10px;
+      padding-right: 10px + 11.47 / 2 * 1px;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-40%);
+        display: block;
+        width: 11.47 / 2 * 1px;
+        height: 24.04 / 2 * 1px;
+        background-image: inline-svg('<svg xmlns="http://www.w3.org/2000/svg" width="6.412" height="15.377" viewBox="0 0 6.412 15.377"><path d="M5.472,0,0,15.035" transform="translate(0.47 0.171)" fill="none" stroke="#ccc" stroke-width="1"/></svg>');
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+        @include mq(LG_only) {
+          width: 6.412px;
+          height: 15.377px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,144 @@
+header {
+  $header_height_MN : 170 / 2 * 1px;
+  $navBtn_width     : 80 / 2 * 1px;
+  @include mq(LG_only) {
+    margin-bottom: $gap_LG_M;
+  }
+
+  .nav-block {
+    @include mq(MN_only) {
+      height: $header_height_MN;
+    }
+  }
+
+  .nav-logo {
+    @include mq(MN_only) {
+      position: absolute;
+      top: 50%;
+      left: $nav_gap_MN / 2;
+      transform: translateY(-50%);
+    }
+  }
+
+  .nav-menu {
+    @include mq(MN_only) {
+      z-index: $index_middle + 1;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding-top: $header_height_MN;
+      padding-bottom: $header_height_MN / 2;
+      background-color: rgba($color_bg_white,.95);
+    }
+    &_copy {
+      display: none;
+    }
+  }
+
+  .nav-btn {
+    @include mq(MN_only) {
+      z-index: $index_middle + 2;
+      position: fixed;
+      top: $header_height_MN / 2;
+      right: $nav_gap_MN;
+      transform: translateY(-50%);
+      display: block;
+      width: $navBtn_width;
+      height: $navBtn_width;
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+      #navBtnDefault {
+        width: 48 / 2 * 1px;
+        height: 30 / 2 * 1px;
+      }
+      #navBtnCross {
+        width: 31.56 / 2 * 1px;
+        height: 31.56 / 2 * 1px;
+      }
+    }
+  }
+
+}
+
+.js-header-sp {
+  .nav-btn {
+    #navBtnDefault {
+      .path_01 {
+        animation-delay: 0;
+      }
+      .path_02 {
+        animation-delay: .1s;
+      }
+      .path_03 {
+        animation-delay: .2s;
+      }
+    }
+  }
+  &.is-set {
+    .nav-menu {
+      transform: translateY(-100%);
+      &_list {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+    }
+    .nav-btn {
+      #navBtnCross path {
+        transform: translate3d(-100%, 0, 0);
+      }
+    }
+  }
+  &.is-close {
+    .nav-menu {
+      transform: translateY(-100%);
+      transition: $transition_high;
+      &_list {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0;
+      }
+    }
+    .nav-btn {
+      #navBtnDefault path {
+        animation-name: navBtnIn;
+        animation-duration: .6s;
+        animation-fill-mode: both;
+        transition-delay: 1.4s;
+      }
+      #navBtnCross path {
+        animation-name: navBtnOut;
+        animation-duration: .6s;
+        animation-fill-mode: both;
+      }
+    }
+  }
+  &.is-open {
+    .nav-menu {
+      transform: translateY(0);
+      transition: $transition_high;
+      &_list {
+        opacity: 1;
+        transform: translateY(0);
+        transition: $transition_base;
+        transition-delay: .3s;
+      }
+    }
+    .nav-btn {
+      #navBtnDefault path {
+        animation-name: navBtnOut;
+        animation-duration: .6s;
+        animation-fill-mode: both;
+      }
+      #navBtnCross path {
+        animation-name: navBtnIn;
+        animation-duration: .6s;
+        animation-fill-mode: both;
+        transition-delay: 1.4s;
+      }
+    }
+  }
+}

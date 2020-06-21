@@ -1,0 +1,73 @@
+.archiveBlog {
+  &_item {
+    &:not(:first-child) {
+      @include mq(MN_only) {
+        margin-top: $gap_MN_M;
+      }
+    }
+    @at-root .p-archive-blog & {
+      &:not(:nth-child(-n+2)) {
+        @include mq(LG_only) {
+          margin-top: $gap_LG_M;
+        }
+      }
+    }
+  }
+  &_textArea {
+    padding: 1em 0 0;
+    text-align: left;
+    > * {
+      &:not(:first-child) {
+        margin-top: .6em;
+      }
+    }
+  }
+  &_data {
+    color: #666;
+    @include font(26 / 2,44 / 2);
+    @include mq(LG_only) {
+      @include font(12,14,60);
+    }
+  }
+  &_title {
+    @include font(26 / 2,44 / 2);
+    @include mq(LG_only) {
+      @include font(16,28,80);
+    }
+  }
+  &_content {
+    @include font(24 / 2,38 / 2,60);
+    color: $color_gray;
+    @include mq(LG_only) {
+      @include font(14,23,80);
+    }
+  }
+//   .pagenation {
+//     margin-top: $gap_MN_M;
+//   }
+}
+
+.singleBlog {
+//   @extend %wrapper_X_L;
+//   padding-top: $gap_MN_M;
+//   border-top: 1px solid $color_gray_border_l;
+  text-align: left;
+  &_data {
+    margin-bottom: $gap_MN_S;
+    color: #666;
+  }
+  &_title {
+    @include font(30 / 2,50 / 2,100);
+    margin-bottom: $gap_MN_M;
+    @include mq(LG_only) {
+      @include font(21,35,80);
+    }
+  }
+  &_content {
+    > * {
+      &:not(:first-child) {
+        margin-top: $gap_MN_L;
+      }
+    }
+  }
+}

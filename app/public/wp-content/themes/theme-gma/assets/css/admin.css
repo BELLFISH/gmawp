@@ -1,0 +1,11 @@
+@charset "UTF-8";
+#dashboard-widgets-wrap{display:none}
+#slugdiv input[name=post_name]{width:100%}
+#works_custom_field_title textarea{width:100%;height:30px;min-height:30px;resize:none}
+#works_custom_field_text textarea{width:100%;height:400px}
+#works_custom_field_info .works_custom_field_info_wrap{display:flex;padding:10px 0}
+#works_custom_field_info .works_custom_field_info_wrap>:nth-child(1){width:25%}
+#works_custom_field_info .works_custom_field_info_wrap>:nth-child(2){width:75%}
+#works_custom_field_info .works_custom_field_info_wrap p{margin:0;padding-top:4px;padding-right:2px;text-align:right}
+#works_custom_field_info .works_custom_field_info_wrap p::after{content:"：";padding:0 2px}
+#works_custom_field_info .works_custom_field_info_wrap textarea{width:100%;height:30px;min-height:30px}

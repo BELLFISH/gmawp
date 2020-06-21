@@ -1,0 +1,294 @@
+.p-about {
+  position: relative;
+  @extend %container-border;
+  @extend %wrapper_X_L;
+  text-align: left;
+  &_section {
+    &:not(:nth-child(-n+2)) {
+      margin-top: $gap_MN_L;
+      @include mq(LG_only) {
+        margin-top: $gap_LG_L;
+        padding-right: 360px;
+      }
+    }
+  }
+  &_title {
+    margin-bottom: 1.2em;
+    @include font(28 / 2,32 / 2,80);
+    @include mq(LG_only) {
+      @include font(17,40,80);
+    }
+  }
+
+  &_top {
+    @include mq(LG_only) {
+      @include font(17,28,80);
+    }
+  }
+  &_address {
+    dt {
+      &:not(:first-child) {
+        @include mq(MN_only) {
+          margin-top: .6em;
+        }
+      }
+    }
+    @include mq(LG_only) {
+      display: flex;
+      flex-wrap: wrap;
+      > dt {
+        width: 7em;
+      }
+      > dd {
+        width: calc(100% - 7em);
+      }
+    }
+  }
+  &_listDecimal {
+    li {
+      position: relative;
+      margin-left: 1em;
+      text-indent: -1em;
+      &::before {
+        content: "・";
+      }
+      &:not(:first-child) {
+        margin-top: .4em;
+      }
+    }
+  }
+  &_nameArea {
+    display: flex;
+    align-items: center;
+    padding-top: $gap_MN_L;
+    @include mq(LG_only) {
+      margin-bottom: -40px;
+      padding-top: $gap_LG_L;
+      padding-right: 360px;
+      &::after {
+        content: "";
+        width: 860px;
+        height: 1px;
+        background-color: $color_gray_border_l;
+      }
+    }
+    > * {
+      width: 50%;
+    }
+    .name {
+      @include font(28 / 2);
+      @include mq(LG_only) {
+        @include font(17);
+      }
+      .en {
+        @include mq(MN_only) {
+          display: block;
+        }
+        @include mq(LG_only) {
+          margin-left: 2em;
+        }
+      }
+    }
+    .image {
+      @include mq(LG_only) {
+        position: absolute;
+        top: 0;
+        right: $gap_LG_SS;
+        width: 308px;
+        height: 460px;
+      }
+      @include mq(LL) {
+        right: calc(50% - 308px - (#{$win_LL} / 2 - 308px));
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+  &_chronology {
+    display: flex;
+    flex-wrap: wrap;
+    > * {
+      &:not(:nth-child(-n+2)) {
+        @include mq(MN_only) {
+          margin-top: .4em;
+        }
+      }
+    }
+    dt {
+      width: (130 / 600) * 100%;
+      color: $color_gray_l;
+      @include mq(LG_only) {
+        width: 6em;
+        @include font(14,30,60);
+      }
+    }
+    dd {
+      width: ((600 - 130) / 600) * 100%;
+      @include mq(LG_only) {
+        width: calc(100% - 6em);
+        @include font(15,30,80);
+      }
+    }
+  }
+
+  .flow {
+    $size_MN: 22px;
+    $size_LG: 30px;
+    margin-top: $gap_MN_L;
+    padding-top: $gap_MN_L;
+    border-top: 1px solid $color_gray_border_l;
+    @include mq(LG_only) {
+      margin-top: $gap_LG_L;
+      padding-top: $gap_LG_L;
+    }
+    > * {
+      &:not(:first-child) {
+        margin-top: $gap_MN_M;
+        @include mq(LG_only) {
+          margin-top: $gap_MN_M;
+        }
+      }
+    }
+    &_list {
+      counter-reset: number 0;
+    }
+    &_item {
+      position: relative;
+      padding-left: $size_MN * 1.5;
+      @include mq(LG_only) {
+        display: flex;
+        padding-left: $size_LG * 1.5;
+        > * {
+          &:nth-child(1) {
+            width: calc(100% - 690px);
+          }
+          &:nth-child(2) {
+            width: 690px;
+          }
+        }
+      }
+      &:not(:first-child) {
+        padding-top: $gap_MN_M;
+        @include mq(LG_only) {
+          padding-top: $gap_LG_M;
+        }
+      }
+      &::before {
+        z-index: $index_base;
+        content: "";
+        position: absolute;
+        top: 1px;
+        left: $size_MN / 2;
+        display: block;
+        width: 1px;
+        height: calc(100% - 1px);
+        background-color: $color_gray_border_l;
+        @include mq(LG_only) {
+          left: $size_LG / 2;
+        }
+      }
+    }
+    &_heading {
+      position: relative;
+      @include font(26 / 2,40 / 2,60);
+      @include mq(LG_only) {
+        @include font(17,17,80);
+        > span:nth-child(1) {
+          position: relative;
+          > span {
+            z-index: $index_base + 1;
+            position: relative;
+            display: inline-block;
+            padding-right: 30px;
+            background-color: $color_bg_white;
+          }
+          &::after {
+            z-index: $index_base;
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            display: block;
+            width: 330px;
+            height: 1px;
+            background-color: $color_gray_border_l;
+          }
+        }
+      }
+      &::before,&::after {
+        position: absolute;
+        top: 2px;
+        left: -$size_MN * 1.5;
+        width: $size_MN;
+        height: $size_MN;
+        @include mq(LG_only) {
+          left: -$size_LG * 1.5;
+          width: $size_LG;
+          height: $size_LG;
+        }
+      }
+      &::before {
+        z-index: $index_base + 2;
+        counter-increment: number 1;
+        content: counter(number);
+        position: absolute;
+        top: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        line-height: 1;
+      }
+      &::after {
+        z-index: $index_base + 1;
+        content: "";
+        display: block;
+        border: 1px solid $color_black;
+        border-radius: 50%;
+        background-color: $color_bg_white;
+      }
+      .en {
+        @include font(18 / 2,54 / 2,70);
+        color: $color_gray_l;
+        @include mq(MN_only) {
+          margin-left: 1em;
+        }
+        @include mq(LG_only) {
+          display: block;
+          @include font(12,28,60);
+        }
+      }
+    }
+    &_text {
+      @include font(24 / 2,36 / 2);
+      @include mq(LG_only) {
+        @include font(15,22,60);
+      }
+    }
+    &_noteList {
+      padding: $gap_MN_S;
+      background-color: #f9f9f9;
+      color: #666;
+      @include mq(LG_only) {
+        padding: $gap_LG_S;
+      }
+      li {
+        position: relative;
+        margin-left: 1em;
+        text-indent: -1em;
+        @include font(24 / 2,36 / 2);
+        @include mq(LG_only) {
+          @include font(14,25,60);
+        }
+        &::before {
+          content: "※";
+        }
+        &:not(:first-child) {
+          margin-top: $gap_MN_S;
+        }
+      }
+    }
+  }
+}

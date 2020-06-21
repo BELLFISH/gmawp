@@ -1,0 +1,43 @@
+// size ----------
+$win_L  : 960px; // MN - LG breakpoint
+$win_LL : 1100px;
+
+// breakpoint ----------
+$bp_MN_only : $win_L;
+$bp_LG_only : $win_L + 1px;
+$bp_LL      : $win_LL + 40px;
+
+// z-index ----------
+$index_base   : 10;
+$index_middle : 30;
+$index_upper  : 60;
+
+// transition ----------
+$transition_high : ease-out .2s;
+$transition_base : ease-out .4s;
+$transition_slow : ease-out .6s;
+
+// container ----------
+$container_M : $win_LL - 200px;
+$container_L : $win_LL;
+
+// gap ----------
+$gap_MN_X  : 80 / 750 * 100%;
+$gap_MN_S  : 15px;
+$gap_MN_M  : 30px;
+$gap_MN_L  : 45px;
+$gap_MN_LL : 70px;
+
+$gap_LG_SS : 20px;
+$gap_LG_S  : 30px;
+$gap_LG_M  : 60px;
+$gap_LG_L  : 90px;
+
+// font-weight ----------
+$fontWeightR : 300;
+$fontWeightM : 500;
+$fontWeightB : 700;
+
+// partial ----------
+$nav_gap_MN  : 20px;
+$nav_gap_LG  : 30px;

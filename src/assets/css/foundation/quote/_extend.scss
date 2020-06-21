@@ -1,0 +1,52 @@
+%wrapper_X_M {
+  @include mq(MN_only) {
+    padding-right: $gap_MN_X;
+    padding-left: $gap_MN_X;
+  }
+  @include mq(LG_only) {
+    padding-right: $gap_LG_SS;
+    padding-left: $gap_LG_SS;
+  }
+  @include mq(LL) {
+    padding-right: calc((100vw - #{$container_M}) / 2);
+    padding-left: calc((100vw - #{$container_M}) / 2);
+  }
+}
+
+%wrapper_X_L {
+  @include mq(MN_only) {
+    padding-right: $gap_MN_X;
+    padding-left: $gap_MN_X;
+  }
+  @include mq(LG_only) {
+    padding-right: $gap_LG_SS;
+    padding-left: $gap_LG_SS;
+  }
+  @include mq(LL) {
+    padding-right: calc((100vw - #{$container_L}) / 2);
+    padding-left: calc((100vw - #{$container_L}) / 2);
+  }
+}
+
+%wrapper_LG_X_M {
+  max-width: $container_M;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+%wrapper_LG_X_L {
+  max-width: $container_L;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+%container-border {
+  @include mq(MN_only) {
+    padding-top: $gap_MN_M;
+    padding-bottom: $gap_MN_LL;
+    border-top: 1px solid $color_gray_border_l;
+  }
+  @include mq(LG_only) {
+    padding-bottom: $gap_LG_L;
+  }
+}

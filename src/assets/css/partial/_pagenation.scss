@@ -1,0 +1,64 @@
+.pagenation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @extend %ff-roboto;
+  @include font(23 / 2,23 / 2,100);
+  color: $color_black;
+  @include mq(LG_only) {
+    @include font(14,14,100);
+  }
+  &:not(:first-child) {
+    margin-top: $gap_MN_M;
+    @include mq(LG_only) {
+      margin-top: $gap_LG_M;
+    }
+  }
+  .page-numbers {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
+    text-decoration: none;
+    &:hover,&:active,&:visited {
+      color: $color_black;
+    }
+    &.prev,&.next {
+      font-size: 0;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 54%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        display: block;
+        @include bg_arrow($color_black,14.6,17.29);
+        @include mq(LG_only) {
+          width: 10.28px;
+          height: 11.92px;
+        }
+      }
+    }
+    &.prev {
+      &::before {
+        transform: translate(-50%,-50%) rotate(180deg);
+      }
+    }
+    &.current {
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 8px;
+        height: 1px;
+        background-color: $color_black;
+      }
+    }
+  }
+}

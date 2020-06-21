@@ -1,0 +1,189 @@
+.p-front-page {
+  &_section {
+    &:not(:nth-child(-n+2)) {
+      margin-top: $gap_MN_L;
+      @include mq(LG_only) {
+        margin-top: $gap_LG_L;
+      }
+    }
+    &.archiveWorks {
+      @extend %wrapper_LG_X_L;
+    }
+    &.archiveBlog {
+      > * {
+        &:not(.p-front-page_archiveLink) {
+          @extend %wrapper_X_L;
+        }
+        &.p-front-page_archiveLink {
+          @extend %wrapper_LG_X_L;
+        }
+      }
+    }
+  }
+  &_l-LG {
+    @include mq(LG_only) {
+      &-blog {
+        display: flex;
+        justify-content: space-between;
+        > * {
+          width: calc((100% - #{$gap_LG_M} * 2) / 3);
+        }
+      }
+    }
+  }
+  &_title {
+    margin-bottom: $gap_MN_S;
+    text-align: left;
+    @include font(48 / 2,82 / 2,100);
+    @include mq(LG_only) {
+      @at-root .contact & {
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: $gap_LG_S;
+          transform: translateY(-50%);
+          display: block;
+          width: calc(100% - 130px - #{$gap_LG_S});
+          height: 1px;
+          background-color: #CCC;
+        }
+      }
+    }
+  }
+  &_archiveLink {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+    a {
+      position: relative;
+      display: block;
+      width: 200 / 2 * 1px;
+      height: 100 / 2 * 1px;
+      @include mq(LG_only) {
+        width: 200px;
+        height: 100px;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: $gap_MN_M;
+        transform: translateY(-50%);
+        display: block;
+        @include bg_arrow($color_black);
+      }
+    }
+  }
+  .contact {
+    @extend %wrapper_X_L;
+    padding-top: $gap_MN_L;
+    padding-bottom: $gap_MN_L;
+    background-color: #EDEDED;
+    text-align: left;
+    @include font(24 / 2,44 / 2,80);
+    @include mq(LG_only) {
+      display: flex;
+      padding-top: $gap_LG_L;
+      padding-bottom: $gap_LG_L;
+      @include font(14,24,80);
+      > * {
+        &:nth-child(1) {
+          width: calc(100% - 670px);
+        }
+        &:nth-child(2) {
+          width: 670px;
+          padding-top: 6px;
+        }
+      }
+    }
+    &_heading {
+      margin-top: $gap_MN_S;
+      @include font(26 / 2,44 / 2,80);
+      @include mq(LG_only) {
+        margin-top: $gap_LG_S;
+        @include font(16,26,60);
+      }
+    }
+    .mw_wp_form {
+      form {
+        display: flex;
+        flex-wrap: wrap;
+        .form_inner {
+          order: 2;
+          width: 100%;
+          @include mq(LG_only) {
+            display: flex;
+            &:not(.error-message):not(.submit) > * {
+              &:nth-child(1) {
+                width: 140px;
+              }
+              &:nth-child(2) {
+                width: calc(100% - 140px);
+              }
+            }
+          }
+          &:not(:first-child) {
+            margin-top: $gap_MN_S;
+            @include mq(LG_only) {
+              margin-top: $gap_LG_S;
+            }
+          }
+          &.submit {
+            @include mq(LG_only) {
+              padding-left: 140px;
+            }
+          }
+          &.error-message {
+          order: 1;
+            > p:not(:empty){
+              @include mq(MN_only) {
+                margin-bottom: $gap_MN_S;
+              }
+              @include mq(LG_only) {
+                margin-bottom: $gap_LG_S;
+              }
+            }
+            .error {
+              font-size: inherit;
+              color: #FF3000;
+            }
+          }
+          > p {
+            &:first-child {
+              margin-bottom: .4em;
+            }
+          }
+          input,textarea {
+            width: 100%;
+            max-width: 100%;
+            border: 1px solid #CCC;
+            background-color: $color_bg_white;
+          }
+          input[name="submit"] {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 315 / 2 * 1px;
+            height: 80 / 2 * 1px;
+            background-color: $color_bg_black;
+            border: none;
+            @include font(24 / 2,24 / 2,70);
+            color: $color_white;
+            @include mq(MN_only) {
+              margin-right: auto;
+              margin-left: auto;
+            }
+            @include mq(LG_only) {
+              width: 216px;
+              height: 50px;
+              @include font(14,26,70);
+            }
+          }
+        }
+      }
+    }
+  }
+}

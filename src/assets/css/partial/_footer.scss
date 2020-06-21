@@ -1,0 +1,6 @@
+footer {
+  border-top: 1px solid $color_gray_border_l;
+  @include mq(MN_only) {
+    padding-top: $nav_gap_MN;
+  }
+}

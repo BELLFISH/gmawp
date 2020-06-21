@@ -1,0 +1,22 @@
+.c-aspectRatio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  > * {
+    &:not(:first-child) {
+      margin-top: 4px;
+      @include mq(LG_only) {
+        margin-top: $gap_LG_S;
+      }
+    }
+  }
+  .landscape {
+    width: 100%;
+  }
+  .portrait {
+    width: calc((100% - 4px) / 2);
+    @include mq(LG_only) {
+      width: calc((100% - #{$gap_LG_S}) / 2);
+    }
+  }
+}

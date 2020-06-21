@@ -1,0 +1,71 @@
+.c-singleLink {
+  display: block;
+  text-decoration: none;
+  color: $color_black;
+  &:hover,&:active,&:visited {
+    color: $color_black;
+  }
+  @include mq(LG_only) {
+    &:hover {
+      .c-singleLink_hoverEffect {
+        &::before,&::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &.-onlyImage {
+    position: relative;
+    &::before,&::after {
+      content: "";
+      position: absolute;
+      display: block;
+    }
+    &::before {
+      opacity: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color_black,.5);
+      transition: all $transition_base;
+    }
+    &::after {
+      bottom: $gap_MN_M;
+      right: $gap_MN_M;
+      @include bg_arrow();
+    }
+    @include mq(LG_only) {
+      &:hover {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &_hoverEffect {
+    @include mq(LG_only) {
+      position: relative;
+      &::before,&::after {
+        opacity: 0;
+        content: "";
+        position: absolute;
+        display: block;
+        transition: opacity $transition_base;
+      }
+      &::before {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color_black,.5);
+      }
+      &::after {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        @include bg_arrow();
+      }
+    }
+  }
+}

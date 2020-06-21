@@ -1,0 +1,13 @@
+app/*
+!app/public/
+app/public/*
+!app/public/wp-content/
+app/public/wp-content/*
+!app/public/wp-content/themes/
+app/public/wp-content/themes/*
+!app/public/wp-content/themes/theme-gma/
+conf/
+logs/
+node_modules/
+
+package-lock.json

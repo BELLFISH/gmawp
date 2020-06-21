@@ -1,0 +1,81 @@
+html {
+  text-size-adjust: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  cursor: default;
+  width: 100%;
+  background-color: $color_bg_white;
+  text-align: center;
+  word-break: break-all;
+  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, Roboto, '游ゴシック体', YuGothic, 'Yu Gothic Medium', sans-serif;
+  @include font(26 / 2,44 / 2,80,$fontWeightR);
+  color: $color_black;
+  @include mq(LG_only) {
+    @include font(15,28,80,$fontWeightR);
+  }
+  .MN_only {
+    display: none;
+    @include mq(MN_only) {
+      display: block;
+    }
+  }
+  .LG_only {
+    display: none;
+    @include mq(LG_only) {
+      display: block;
+    }
+  }
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  .crumbs {
+    margin-top: auto;
+  }
+}
+
+.screen-reader-text {
+  overflow: hidden;
+  position: absolute;
+  top: -10px;
+  width: 1px;
+  height: 1px;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.js-animation {
+  &-slideUp {
+    opacity: 0;
+    position: relative;
+    transform: translateY($gap_MN_S);
+    @include mq(LG_only) {
+      transform: translateY($gap_LG_S);
+    }
+    &.animated {
+      animation-name: slideUp;
+      animation-duration: .6s;
+      animation-fill-mode: both;
+    }
+  }
+  &-headerLoading {
+    @include mq(MN_only) {
+      opacity: 0;
+      transition: $transition_slow;
+      transition-delay: .4s;
+      &.animated {
+        opacity: 1;
+      }
+    }
+  }
+}

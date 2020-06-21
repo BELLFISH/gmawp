@@ -1,0 +1,55 @@
+.crumbs {
+  border-top: 1px solid $color_gray_border_l;
+  ul {
+    @extend %wrapper_X_L;
+    display: flex;
+    vertical-align: center;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    text-align: left;
+    @include mq(MN_only) {
+      padding-right: $gap_MN_X / 2;
+      padding-left: $gap_MN_X / 2;
+    }
+    li {
+      &:last-child {
+        display: block;
+        @include mq(MN_only) {
+          width: 200px;
+        }
+        span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+      &:not(:first-child) {
+        position: relative;
+        margin-left: 6px;
+        padding-left: 12px;
+        &::before {
+          content: ">";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          display: block;
+          line-height: 1;
+          color: $color_gray;
+        }
+      }
+      a {
+        text-decoration: none;
+      }
+      a,span {
+        display: block;
+        padding: .6em 0;
+        @include font(18 / 2,27 / 2,30);
+        color: $color_gray;
+        @include mq(LG_only) {
+          @include font(12,18,30);
+        }
+      }
+    }
+  }
+}

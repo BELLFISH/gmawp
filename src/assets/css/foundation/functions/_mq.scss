@@ -1,0 +1,8 @@
+$breakpoints:(
+  "MN_only":"screen and (max-width: #{$bp_MN_only})",
+  "LG_only":"screen and (min-width: #{$bp_LG_only})",
+  "LL":"screen and (min-width: #{$bp_LL})"
+)!default;
+@mixin mq($breakpoint:DF){
+  @media #{ map-get($breakpoints,$breakpoint) }{ @content; }
+}
